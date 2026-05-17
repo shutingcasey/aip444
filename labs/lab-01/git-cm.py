@@ -2,6 +2,7 @@ import os
 import sys
 from datetime import datetime
 from dotenv import load_dotenv, find_dotenv
+import subprocess
 
 # Locate and load .env
 load_dotenv(find_dotenv())
@@ -20,3 +21,26 @@ if not OPENROUTER_API_KEY:
     sys.exit(1)
 
 print("✅ API Key loaded successfully")
+
+# Function to get staged diff
+def get_git_diff():
+    try:
+        # Run git diff --staged
+        result = subprocess.run(["git", "diff", "--staged"], capture_output=True, text=True, encoding="utf-8", errors="replace",check=True)
+        diff = result.stdout.strip()
+
+        # No staged changes
+        if not diff:
+            print("❌ No staged changes found.")
+            sys.exit(1)
+        return diff
+
+    except subprocess.CalledProcessError:
+        print("❌ Not a git repo.")
+        sys.exit(1)
+
+
+# Call function
+diff = get_git_diff()
+
+print(f"✅ Diff found: {len(diff)} characters")
