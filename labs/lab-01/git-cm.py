@@ -108,3 +108,5 @@ commit_message = generate_commit_message(diff, is_creative)
 
 print("\nGenerated commit message:")
 print(commit_message)
+
+# test creative mode
