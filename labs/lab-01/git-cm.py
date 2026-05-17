@@ -46,6 +46,7 @@ def get_git_diff():
 
 def generate_commit_message(diff, is_creative):
     client = OpenAI(
+        # low cost models for testing
         base_url="https://openrouter.ai/api/v1",
         api_key=OPENROUTER_API_KEY
     )
