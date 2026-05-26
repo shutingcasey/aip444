@@ -12,6 +12,12 @@ interface PullRequestInfo {
   url: string;
 }
 
+interface Comment {
+  username: string;
+  body: string;
+  date: string;
+}
+
 function parseGitHubPrUrl(input: string): PullRequestInfo {
   let url: URL;
 
@@ -73,6 +79,32 @@ async function fetchDiff(prUrl: string): Promise<string> {
   return diffText;
 }
 
+async function fetchComments(owner: string, repo: string, issueNum: number): Promise<Comment[]> {
+  const url = `https://api.github.com/repos/${owner}/${repo}/issues/${issueNum}/comments`;
+
+  console.log(`Fetching comments from: ${url}`);
+
+  const response = await fetch(url, {
+    headers: {
+      'User-Agent': 'AIP444-Lab-03',
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`GitHub API Error: ${response.status}`);
+  }
+
+  const data = await response.json();
+
+  return data.map((item: any) => ({
+    username: item.user.login,
+    body: item.body,
+    date: item.updated_at,
+  }));
+}
+
 async function main() {
   const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
@@ -102,8 +134,16 @@ async function main() {
   console.log(`Diff length: ${diff.length} characters`);
 
   // For demonstration, we print the first 500 characters of the diff
-  console.log('\n--- Diff Preview ---');
-  console.log(diff.slice(0, 500));
+  //   console.log('\n--- Diff Preview ---');
+  //   console.log(diff.slice(0, 500));
+
+  const comments = await fetchComments(prInfo.owner, prInfo.repo, prInfo.prNumber);
+
+  console.log('✅ Comments fetched successfully');
+  console.log(`Comment count: ${comments.length}`);
+
+  console.log('\n--- Comments Preview ---');
+  console.log(comments.slice(0, 3));
 }
 
 main().catch((error) => {
