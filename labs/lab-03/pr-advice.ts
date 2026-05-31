@@ -1,10 +1,11 @@
 import dotenv from 'dotenv';
+import fs from 'fs';
+import OpenAI from 'openai';
 
 // Locate and load .env
 dotenv.config();
 
 const MAX_DIFF_LENGTH = 95000;
-
 interface PullRequestInfo {
   owner: string;
   repo: string;
@@ -105,6 +106,67 @@ async function fetchComments(owner: string, repo: string, issueNum: number): Pro
   }));
 }
 
+function getFileContents(path: string, description: string): string {
+  try {
+    return fs.readFileSync(path, 'utf-8');
+  } catch (error) {
+    console.error(`❌ Error: ${description} not found: ${path}`);
+    process.exit(1);
+  }
+}
+
+function buildUserPrompt(diff: string, comments: Comment[]): string {
+  const commentThread = comments
+    .map(
+      (comment) => `
+      <comment username="${comment.username}" date="${comment.date}">
+      ${comment.body}
+      </comment>`
+    )
+    .join('\n');
+
+  return `
+Please analyze the following GitHub Pull Request.
+
+<diff>
+\`\`\`diff
+${diff}
+\`\`\`
+</diff>
+
+<thread>
+${commentThread || 'No issue comments were found for this PR.'}
+</thread>
+`;
+}
+
+async function callOpenRouter(
+  apiKey: string,
+  systemPrompt: string,
+  userPrompt: string
+): Promise<string> {
+  const client = new OpenAI({
+    baseURL: 'https://openrouter.ai/api/v1',
+    apiKey: apiKey,
+  });
+
+  const response = await client.chat.completions.create({
+    model: 'openai/gpt-4.1-nano',
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ],
+  });
+
+  const content = response.choices[0]?.message?.content;
+
+  if (!content) {
+    throw new Error('No response content returned from OpenRouter');
+  }
+
+  return content;
+}
+
 async function main() {
   const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
@@ -122,28 +184,23 @@ async function main() {
   }
 
   const prInfo = parseGitHubPrUrl(inputUrl);
-
-  console.log('✅ Parsed PR URL successfully');
-  console.log(`Owner: ${prInfo.owner}`);
-  console.log(`Repo: ${prInfo.repo}`);
-  console.log(`PR Number: ${prInfo.prNumber}`);
-
   const diff = await fetchDiff(prInfo.url);
-
-  console.log('✅ Diff fetched successfully');
-  console.log(`Diff length: ${diff.length} characters`);
-
-  // For demonstration, we print the first 500 characters of the diff
-  //   console.log('\n--- Diff Preview ---');
-  //   console.log(diff.slice(0, 500));
-
   const comments = await fetchComments(prInfo.owner, prInfo.repo, prInfo.prNumber);
-
-  console.log('✅ Comments fetched successfully');
-  console.log(`Comment count: ${comments.length}`);
-
-  console.log('\n--- Comments Preview ---');
-  console.log(comments.slice(0, 3));
+  const systemPrompt = getFileContents('SYSTEM_PROMPT.md', 'System prompt file');
+  const userPrompt = buildUserPrompt(diff, comments);
+  const output = await callOpenRouter(
+    OPENROUTER_API_KEY,
+    systemPrompt,
+    userPrompt
+  );
+  console.log('\n===== PR ADVICE REPORT =====');
+  console.log("PR ADVICE REPORT: Developed by Shu-Ting Hsu - 133505222")
+  const now = new Date();
+  const pad = (n: number) => n.toString().padStart(2, '0');
+  const runDate = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+  console.log(`Run Date: ${runDate}`);
+  console.log("============================")
+  console.log(output);
 }
 
 main().catch((error) => {
