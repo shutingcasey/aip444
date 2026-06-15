@@ -26,7 +26,7 @@ const tools: ChatCompletionTool[] = [
     type: 'function',
     function: {
       name: 'read_github_files',
-      description: 'Read one or more full source files from a public GitHub repository when the PR diff does not provide enough context. Use this to inspect surrounding code, related helper functions, imports, or configuration files before analyzing a pull request.',
+      description: 'Read one or more full source files from a public GitHub repository. Use this tool whenever a PR references imported helper functions, utilities, services, models, shared types, or configuration files whose implementation is not fully visible in the diff. Prefer retrieving the file instead of assuming how referenced code behaves.',
       parameters: {
         type: 'object',
         properties: {
@@ -161,7 +161,11 @@ function getFileContents(path: string, description: string): string {
   }
 }
 
-function buildUserPrompt(diff: string, comments: Comment[]): string {
+function buildUserPrompt(
+  prInfo: PullRequestInfo,
+  diff: string,
+  comments: Comment[]
+): string {
   const commentThread = comments
     .map(
       (comment) => `
@@ -172,19 +176,25 @@ function buildUserPrompt(diff: string, comments: Comment[]): string {
     .join('\n');
 
   return `
-Please analyze the following GitHub Pull Request.
+  Please analyze the following GitHub Pull Request.
 
-<diff>
-\`\`\`diff
-${diff}
-\`\`\`
-</diff>
+  <repository>
+  owner: ${prInfo.owner}
+  repo: ${prInfo.repo}
+  ref: main
+  </repository>
 
-<thread>
-${commentThread || 'No issue comments were found for this PR.'}
-</thread>
-`;
-}
+  <diff>
+  \`\`\`diff
+  ${diff}
+  \`\`\`
+  </diff>
+
+  <thread>
+  ${commentThread || 'No issue comments were found for this PR.'}
+  </thread>
+  `;
+  }
 
 async function callOpenRouter(
   apiKey: string,
@@ -207,10 +217,15 @@ async function callOpenRouter(
     console.log(`\n🔁 LLM iteration ${iteration}`);
 
     const response = await client.chat.completions.create({
-      model: 'openai/gpt-4.1-mini',
+      model: 'google/gemini-2.5-flash-lite',
+      // 'openai/gpt-4.1-mini'
       messages,
       tools,
+      tool_choice: 'auto',
     });
+
+
+    console.log(JSON.stringify(response.choices[0].message, null, 2));
 
     const assistantMessage = response.choices[0]?.message;
 
@@ -288,7 +303,7 @@ async function main() {
   const diff = await fetchDiff(prInfo.url);
   const comments = await fetchComments(prInfo.owner, prInfo.repo, prInfo.prNumber);
   const systemPrompt = getFileContents('SYSTEM_PROMPT.md', 'System prompt file');
-  const userPrompt = buildUserPrompt(diff, comments);
+  const userPrompt = buildUserPrompt(prInfo, diff, comments);
   const output = await callOpenRouter(
     OPENROUTER_API_KEY,
     systemPrompt,
