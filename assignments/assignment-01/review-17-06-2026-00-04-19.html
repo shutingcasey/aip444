@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        .finding {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .critical {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .warn {
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+            color: #856404;
+        }
+        .path {
+            font-weight: bold;
+        }
+        .line {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Code Review Report</h1>
+    <div class="finding critical">
+        <p class="path">File: <span>bad_code.ts</span></p>
+        <p class="line">Line: <span>10</span></p>
+        <p><strong>Severity:</strong> Critical</p>
+        <p><strong>Category:</strong> Security</p>
+        <p><strong>Description:</strong> A hardcoded password is stored directly in source code. Move it to an environment variable.</p>
+    </div>
+    <div class="finding warn">
+        <p class="path">File: <span>bad_code.ts</span></p>
+        <p class="line">Line: <span>10</span></p>
+        <p><strong>Severity:</strong> Warning</p>
+        <p><strong>Category:</strong> Style</p>
+        <p><strong>Description:</strong> The variable name 'password' is unclear. Consider renaming it to something more descriptive, such as 'adminPassword'.</p>
+    </div>
+    <div class="finding warn">
+        <p class="path">File: <span>bad_code.ts</span></p>
+        <p class="line">Line: <span>12</span></p>
+        <p><strong>Severity:</strong> Warning</p>
+        <p><strong>Category:</strong> Maintainability</p>
+        <p><strong>Description:</strong> The 'login' function could be simplified. Consider returning the comparison directly: return pass === password;</p>
+    </div>
+</body>
+</html>

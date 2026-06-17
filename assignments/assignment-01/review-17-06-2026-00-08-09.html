@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .critical {
+            background-color: #ffcccc;
+        }
+        .warn {
+            background-color: #ffffcc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Code Review Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>File Path</th>
+                <th>Line Number</th>
+                <th>Severity</th>
+                <th>Category</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="critical">
+                <td>bad_code.ts</td>
+                <td>10</td>
+                <td>Critical</td>
+                <td>Security</td>
+                <td>A hardcoded password is stored directly in source code. Move it to an environment variable.</td>
+            </tr>
+            <tr class="warn">
+                <td>bad_code.ts</td>
+                <td>10</td>
+                <td>Warning</td>
+                <td>Style</td>
+                <td>The variable name 'password' is unclear in its context. Consider renaming it to something more descriptive, such as 'defaultPassword'.</td>
+            </tr>
+            <tr class="warn">
+                <td>bad_code.ts</td>
+                <td>12</td>
+                <td>Warning</td>
+                <td>Style</td>
+                <td>The function 'login' does not clearly indicate what it does. Consider adding a comment to describe its purpose.</td>
+            </tr>
+            <tr class="warn">
+                <td>bad_code.ts</td>
+                <td>17</td>
+                <td>Warning</td>
+                <td>Style</td>
+                <td>The return type of the function 'login' is not explicitly defined. Consider specifying the return type as 'boolean'.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
