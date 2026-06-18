@@ -244,6 +244,11 @@ if (!isLastStep) {
 
 const response = await client.chat.completions.create(request);
 
+// debugLog(
+//   debug,
+//   `[${name}] Usage:\n${JSON.stringify(response.usage, null, 2)}`
+// );
+
     const choice = response.choices[0];
 
     if (!choice) {
@@ -341,6 +346,11 @@ ${JSON.stringify(maintainabilityResult, null, 2)}
       },
     ],
   });
+
+  // debugLog(
+  //   debug,
+  //   `[Judge] Usage:\n${JSON.stringify(response.usage, null, 2)}`
+  // );
 
   const choice = response.choices[0];
 

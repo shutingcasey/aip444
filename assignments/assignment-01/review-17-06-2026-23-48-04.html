@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        .finding {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .critical {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .warn {
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+        .path {
+            font-weight: bold;
+        }
+        .line {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Code Review Report</h1>
+
+    <h2>Findings</h2>
+
+    <div class="finding critical">
+        <div class="path">File: <span class="path">bad_code.ts</span></div>
+        <div class="line">Line: <span class="line">14</span></div>
+        <div class="severity">Severity: <strong>Critical</strong></div>
+        <div class="category">Category: <strong>Security</strong></div>
+        <div class="description">A hardcoded API key is stored directly in source code. Move it to an environment variable.</div>
+    </div>
+
+    <div class="finding warn">
+        <div class="path">File: <span class="path">bad_code.ts</span></div>
+        <div class="line">Line: <span class="line">1</span></div>
+        <div class="severity">Severity: <strong>Warning</strong></div>
+        <div class="category">Category: <strong>Style</strong></div>
+        <div class="description">The import statement for 'fs' is missing. The code uses fs.writeFileSync but does not import the 'fs' module.</div>
+    </div>
+
+    <div class="finding warn">
+        <div class="path">File: <span class="path">bad_code.ts</span></div>
+        <div class="line">Line: <span class="line">9</span></div>
+        <div class="severity">Severity: <strong>Warning</strong></div>
+        <div class="category">Category: <strong>Style</strong></div>
+        <div class="description">The variable name x is unclear. Rename it to something more meaningful, such as userId.</div>
+    </div>
+
+    <div class="finding warn">
+        <div class="path">File: <span class="path">bad_code.ts</span></div>
+        <div class="line">Line: <span class="line">10</span></div>
+        <div class="severity">Severity: <strong>Warning</strong></div>
+        <div class="category">Category: <strong>Logic</strong></div>
+        <div class="description">The return type of getUserID is confusing. It returns a string (from x.toString()), but the function signature indicates it returns a number.</div>
+    </div>
+
+</body>
+</html>

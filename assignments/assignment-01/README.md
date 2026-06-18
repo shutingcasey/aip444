@@ -1,3 +1,3 @@
-Testing Git Mode 
+## Testing
 
-Testing Git Mode 2
+This project supports Git Mode and File Mode.

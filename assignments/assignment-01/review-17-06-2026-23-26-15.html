@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        .finding {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .critical {
+            background-color: #ffdddd;
+            border-color: #f44336;
+        }
+        .warn {
+            background-color: #fff3cd;
+            border-color: #ffc107;
+        }
+        .path {
+            font-weight: bold;
+        }
+        .line {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Code Review Report</h1>
+    
+    <div class="finding critical">
+        <div class="path">File: <span>bad_code.ts</span></div>
+        <div class="line">Line: <span>14</span></div>
+        <div class="severity">Severity: <span>Critical</span></div>
+        <div class="category">Category: <span>Security</span></div>
+        <div class="description">A hardcoded API key is stored directly in source code. Move it to an environment variable.</div>
+    </div>
+
+    <div class="finding warn">
+        <div class="path">File: <span>bad_code.ts</span></div>
+        <div class="line">Line: <span>1</span></div>
+        <div class="severity">Severity: <span>Warning</span></div>
+        <div class="category">Category: <span>Style</span></div>
+        <div class="description">The import statement for 'fs' is missing. 'fs' is used in the code but not imported.</div>
+    </div>
+
+    <div class="finding warn">
+        <div class="path">File: <span>bad_code.ts</span></div>
+        <div class="line">Line: <span>9</span></div>
+        <div class="severity">Severity: <span>Warning</span></div>
+        <div class="category">Category: <span>Style</span></div>
+        <div class="description">The variable name 'x' is unclear. Rename it to something more meaningful, such as 'userId'.</div>
+    </div>
+
+    <div class="finding warn">
+        <div class="path">File: <span>bad_code.ts</span></div>
+        <div class="line">Line: <span>10</span></div>
+        <div class="severity">Severity: <span>Warning</span></div>
+        <div class="category">Category: <span>Logic</span></div>
+        <div class="description">The return type of getUserID is number, but it returns a string. This can lead to confusion.</div>
+    </div>
+</body>
+</html>
