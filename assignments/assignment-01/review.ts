@@ -222,16 +222,27 @@ ${input.content}
     },
   ];
 
-  let finalText = "";
+let finalText = "";
 
-  for (let step = 0; step < 5; step++) {
-    const response = await client.chat.completions.create({
-      model: "openai/gpt-4o-mini",
-      temperature: name === "Security" ? 0.1 : 0.3,
-      messages,
-      tools: llmTools,
-      tool_choice: step === 0 ? "auto" : "auto",
-    });
+const maxSteps = 8;
+
+for (let step = 0; step < maxSteps; step++) {
+  const isLastStep = step === maxSteps - 1;
+
+const request: any = {
+  model: "openai/gpt-4o-mini",
+  temperature: name === "Security" ? 0.1 : 0.3,
+  messages,
+};
+
+if (!isLastStep) {
+  request.tools = llmTools;
+  request.tool_choice = "auto";
+} else {
+  request.tool_choice = "none";
+}
+
+const response = await client.chat.completions.create(request);
 
     const choice = response.choices[0];
 
