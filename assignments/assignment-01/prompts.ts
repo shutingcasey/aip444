@@ -34,7 +34,7 @@ Few-shot example:
   "findings": [
     {
       "path": "api/server.ts",
-      "line": 12,
+      "line": 181,
       "severity": "critical",
       "category": "security",
       "description": "A hardcoded API key is stored directly in source code. Move it to an environment variable."
@@ -88,7 +88,6 @@ Few-shot example:
 
 Tool use:
 - Use read_file to inspect the full file before reporting style or maintainability issues.
-- Use ripgrep only if you need to find where a function or variable is used.
 - Only use the provided tools.
 `;
 
