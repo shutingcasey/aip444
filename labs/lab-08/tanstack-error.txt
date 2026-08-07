@@ -1,0 +1,15 @@
+Error:
+Bad argument type.
+
+Starting with v5, only the Object form is allowed when calling query related functions.
+
+You are using:
+
+useQuery(['todos'], fetchTodos)
+
+Please use:
+
+useQuery({
+  queryKey: ['todos'],
+  queryFn: fetchTodos,
+})
