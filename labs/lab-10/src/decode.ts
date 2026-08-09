@@ -1,5 +1,24 @@
 // src/decode.ts
-import { DataURI } from './types';
+import { writeFile } from 'node:fs/promises';
+
+import { DataURISchema, getCategory, MediaTypeSchema, type DataURI } from './types';
+
+const DATA_URI_PATTERN = /^data:([^;,]+);base64,(.+)$/;
+const BASE64_PATTERN = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
+
+function decodeBase64(base64: string): Buffer {
+  if (!BASE64_PATTERN.test(base64)) {
+    throw new Error('Invalid Base64 content');
+  }
+
+  const decoded = Buffer.from(base64, 'base64');
+
+  if (decoded.length === 0 || decoded.toString('base64') !== base64) {
+    throw new Error('Invalid Base64 content');
+  }
+
+  return decoded;
+}
 
 /**
  * Parses a Data URI string into its components.
@@ -12,8 +31,27 @@ import { DataURI } from './types';
  * @throws Error if the Base64 content is invalid
  */
 export function parseDataURI(uri: string): DataURI {
-  // TODO: implement
-  throw new Error('Not implemented');
+  const match = DATA_URI_PATTERN.exec(uri);
+
+  if (!match) {
+    throw new Error('Invalid Data URI');
+  }
+
+  const [, mimeType, base64] = match;
+  const parsedMimeType = MediaTypeSchema.safeParse(mimeType);
+
+  if (!parsedMimeType.success) {
+    throw new Error(`Unsupported MIME type: ${mimeType}`);
+  }
+
+  decodeBase64(base64);
+
+  return DataURISchema.parse({
+    mediaType: parsedMimeType.data,
+    category: getCategory(parsedMimeType.data),
+    base64,
+    raw: uri,
+  });
 }
 
 /**
@@ -24,8 +62,8 @@ export function parseDataURI(uri: string): DataURI {
  * @throws Error if the URI is invalid
  */
 export function decodeToBuffer(uri: string): Buffer {
-  // TODO: implement
-  throw new Error('Not implemented');
+  const parsed = parseDataURI(uri);
+  return decodeBase64(parsed.base64);
 }
 
 /**
@@ -36,6 +74,6 @@ export function decodeToBuffer(uri: string): Buffer {
  * @throws Error if the URI is invalid
  */
 export async function decodeToFile(uri: string, outputPath: string): Promise<void> {
-  // TODO: implement
-  throw new Error('Not implemented');
+  const decoded = decodeToBuffer(uri);
+  await writeFile(outputPath, decoded);
 }
