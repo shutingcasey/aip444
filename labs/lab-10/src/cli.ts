@@ -1,49 +1,32 @@
-// @ts-nocheck
-const { readFileSync } = require('node:fs');
-const { join } = require('node:path');
-const { transformSync } = require('esbuild');
+import { encodeFile } from './index';
 
-const usageMessage = `Usage: node ${join('src', 'cli.ts')} <file-path>`;
-
-require.extensions['.ts'] = (module, filename) => {
-  const source = readFileSync(filename, 'utf8');
-  const transpiled = transformSync(source, {
-    loader: 'ts',
-    format: 'cjs',
-    target: 'es2022',
-    sourcemap: false,
-    sourcefile: filename,
-  });
-
-  module._compile(transpiled.code, filename);
-};
+const USAGE_MESSAGE = 'Usage: tsx src/cli.ts <file-path>';
 
 /**
  * Writes a single-line message to stderr.
  *
- * @param {string} message - Message to print
+ * @param message - Message to print
  */
-function writeError(message) {
+function writeError(message: string): void {
   process.stderr.write(`${message}\n`);
 }
 
 /**
  * Runs the CLI and returns the intended process exit code.
  *
- * @returns {Promise<number>} Exit code for the current invocation
+ * @returns Exit code for the current invocation
  */
-async function main() {
+async function main(): Promise<number> {
   const args = process.argv.slice(2);
 
   if (args.length !== 1 || args[0] === '--help' || args[0] === '-h') {
-    writeError(usageMessage);
+    writeError(USAGE_MESSAGE);
     return 1;
   }
 
   try {
-    const { encodeFile } = require('./index.ts');
     const encoded = await encodeFile(args[0]);
-    process.stdout.write(encoded.raw);
+    process.stdout.write(`${encoded.raw}\n`);
     return 0;
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown error';

@@ -9,6 +9,7 @@ const execFileAsync = promisify(execFile);
 const fixturesDir = resolve(__dirname, 'fixtures');
 const projectRoot = resolve(__dirname, '..');
 const cliEntry = resolve(projectRoot, 'src', 'cli.ts');
+const tsRegisterEntry = resolve(projectRoot, 'tests', 'register-ts.cjs');
 const tempRoot = await mkdtemp(join(tmpdir(), 'data-uri-cli-tests-'));
 
 afterAll(async () => {
@@ -25,7 +26,7 @@ async function execCli(args: string[]): Promise<{
   exitCode: number;
 }> {
   try {
-    const result = await execFileAsync(process.execPath, [cliEntry, ...args], {
+    const result = await execFileAsync(process.execPath, ['-r', tsRegisterEntry, cliEntry, ...args], {
       cwd: projectRoot,
     });
 
