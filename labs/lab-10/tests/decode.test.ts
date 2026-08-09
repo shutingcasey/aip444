@@ -73,6 +73,23 @@ describe('parseDataURI', () => {
       /invalid|base64/i,
     );
   });
+
+  it.each([
+    {
+      name: 'embedded newlines',
+      uri: 'data:image/png;base64,QU\nJD',
+      expected: 'ABC',
+    },
+    {
+      name: 'surrounding whitespace',
+      uri: 'data:image/png;base64,  QUJD  ',
+      expected: 'ABC',
+    },
+  ])('accepts Base64 payloads with $name', ({ uri, expected }) => {
+    const parsed = parseDataURI(uri);
+
+    expect(Buffer.from(parsed.base64.replaceAll(/\s+/g, ''), 'base64').toString()).toBe(expected);
+  });
 });
 
 describe('decodeToBuffer', () => {
@@ -108,6 +125,45 @@ describe('decodeToBuffer', () => {
       /invalid|base64/i,
     );
   });
+
+  it.each([
+    {
+      name: '1-byte payload',
+      uri: 'data:image/png;base64,QQ==',
+      expected: Buffer.from([0x41]),
+    },
+    {
+      name: '2-byte payload',
+      uri: 'data:image/png;base64,QUI=',
+      expected: Buffer.from([0x41, 0x42]),
+    },
+    {
+      name: '3-byte payload',
+      uri: 'data:image/png;base64,QUJD',
+      expected: Buffer.from([0x41, 0x42, 0x43]),
+    },
+  ])('decodes a valid $name correctly', ({ uri, expected }) => {
+    const decoded = decodeToBuffer(uri);
+
+    expect(decoded.equals(expected)).toBe(true);
+  });
+
+  it.each([
+    {
+      name: 'embedded newlines',
+      uri: 'data:image/png;base64,QU\nJD',
+      expected: Buffer.from('ABC'),
+    },
+    {
+      name: 'surrounding whitespace',
+      uri: 'data:image/png;base64,  QUJD  ',
+      expected: Buffer.from('ABC'),
+    },
+  ])('decodes Base64 payloads with $name', ({ uri, expected }) => {
+    const decoded = decodeToBuffer(uri);
+
+    expect(decoded.equals(expected)).toBe(true);
+  });
 });
 
 describe('decodeToFile', () => {
@@ -126,6 +182,15 @@ describe('decodeToFile', () => {
 
     await expect(decodeToFile('data:image/png;base64,%%%not-base64%%%', outputPath)).rejects.toThrow(
       /invalid|base64/i,
+    );
+  });
+
+  it('rejects writes when the parent directory does not exist', async () => {
+    const expected = await buildFixtureDataURI('test.png', 'image/png');
+    const outputPath = join(tempRoot, 'missing-parent', 'decoded-test.png');
+
+    await expect(decodeToFile(expected.raw, outputPath)).rejects.toThrow(
+      /(enoent|no such file|cannot find path)/i,
     );
   });
 });

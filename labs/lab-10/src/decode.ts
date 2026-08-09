@@ -3,17 +3,23 @@ import { writeFile } from 'node:fs/promises';
 
 import { DataURISchema, getCategory, MediaTypeSchema, type DataURI } from './types';
 
-const DATA_URI_PATTERN = /^data:([^;,]+);base64,(.+)$/;
+const DATA_URI_PATTERN = /^data:([^;,]+);base64,([\s\S]+)$/;
 const BASE64_PATTERN = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
 
+function normalizeBase64(base64: string): string {
+  return base64.replaceAll(/\s+/g, '');
+}
+
 function decodeBase64(base64: string): Buffer {
-  if (!BASE64_PATTERN.test(base64)) {
+  const normalizedBase64 = normalizeBase64(base64);
+
+  if (!BASE64_PATTERN.test(normalizedBase64)) {
     throw new Error('Invalid Base64 content');
   }
 
-  const decoded = Buffer.from(base64, 'base64');
+  const decoded = Buffer.from(normalizedBase64, 'base64');
 
-  if (decoded.length === 0 || decoded.toString('base64') !== base64) {
+  if (decoded.length === 0 || decoded.toString('base64') !== normalizedBase64) {
     throw new Error('Invalid Base64 content');
   }
 
@@ -44,12 +50,13 @@ export function parseDataURI(uri: string): DataURI {
     throw new Error(`Unsupported MIME type: ${mimeType}`);
   }
 
-  decodeBase64(base64);
+  const normalizedBase64 = normalizeBase64(base64);
+  decodeBase64(normalizedBase64);
 
   return DataURISchema.parse({
     mediaType: parsedMimeType.data,
     category: getCategory(parsedMimeType.data),
-    base64,
+    base64: normalizedBase64,
     raw: uri,
   });
 }

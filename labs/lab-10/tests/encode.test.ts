@@ -73,6 +73,32 @@ describe('encodeFile', () => {
 
     await expect(encodeFile(emptyPath)).rejects.toThrow(/empty|0 bytes/i);
   });
+
+  it('supports uppercase file extensions such as .PNG', async () => {
+    const original = await readFile(fixturePath('test.png'));
+    const uppercasePath = join(tempRoot, 'uppercase.PNG');
+    await writeFile(uppercasePath, original);
+
+    const encoded = await encodeFile(uppercasePath);
+    const decoded = decodeToBuffer(encoded.raw);
+
+    expect(encoded.mediaType).toBe('image/png');
+    expect(encoded.category).toBe('image');
+    expect(decoded.equals(original)).toBe(true);
+  });
+
+  it('supports the .jpeg alias for image/jpeg', async () => {
+    const original = await readFile(fixturePath('test.jpg'));
+    const jpegPath = join(tempRoot, 'alias.jpeg');
+    await writeFile(jpegPath, original);
+
+    const encoded = await encodeFile(jpegPath);
+    const decoded = decodeToBuffer(encoded.raw);
+
+    expect(encoded.mediaType).toBe('image/jpeg');
+    expect(encoded.category).toBe('image');
+    expect(decoded.equals(original)).toBe(true);
+  });
 });
 
 describe('encodeBuffer', () => {
