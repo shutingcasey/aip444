@@ -1,0 +1,225 @@
+{
+  "generatedAt": "2026-08-13T17:42:22.254Z",
+  "postingsAnalyzed": 8,
+  "sourceSlugs": [
+    "full-time-jobs-in-toronto-ontario-job-board-jobmesh",
+    "lead-software-developer-ge-vernova",
+    "principal-software-developer-ai-ml-performance-validation-systems-testing-in-markham-canada-advanced-micro-devices-inc",
+    "senior-software-developer-job-details-ats-automation",
+    "senior-software-developer-security-automation-global-security-in-toronto-ontario-canada-technology-analytics-research-at-rbc-jobs-at-rbc",
+    "software-developer-specialist-security-product-intact-careers",
+    "software-engineer-python-pl-sql-job-details-scotiabank",
+    "staff-principal-software-engineer-java-ai-platform-apexon-bebee"
+  ],
+  "topRequiredSkills": [
+    {
+      "skill": "Python",
+      "count": 5,
+      "percentage": 63
+    },
+    {
+      "skill": "C++",
+      "count": 4,
+      "percentage": 50
+    },
+    {
+      "skill": "Java",
+      "count": 4,
+      "percentage": 50
+    },
+    {
+      "skill": "C#",
+      "count": 3,
+      "percentage": 38
+    },
+    {
+      "skill": "SQL",
+      "count": 2,
+      "percentage": 25
+    },
+    {
+      "skill": ".NET",
+      "count": 2,
+      "percentage": 25
+    },
+    {
+      "skill": "REST",
+      "count": 2,
+      "percentage": 25
+    },
+    {
+      "skill": "Docker",
+      "count": 2,
+      "percentage": 25
+    },
+    {
+      "skill": "Spring Boot",
+      "count": 2,
+      "percentage": 25
+    },
+    {
+      "skill": "AWS",
+      "count": 2,
+      "percentage": 25
+    },
+    {
+      "skill": "Kafka",
+      "count": 2,
+      "percentage": 25
+    },
+    {
+      "skill": "Visual Studio",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "Javascript",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "ROCm",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "CUDA",
+      "count": 1,
+      "percentage": 13
+    }
+  ],
+  "topPreferredSkills": [
+    {
+      "skill": "Node.js",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "Java",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "UML",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "XML",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "Agile",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "SDLC",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "Delphi",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "HPC",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "Linux",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "GitHub",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "Jenkins",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "CI",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "BMC",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "IPMI",
+      "count": 1,
+      "percentage": 13
+    },
+    {
+      "skill": "Redfish",
+      "count": 1,
+      "percentage": 13
+    }
+  ],
+  "experience": {
+    "averageMinYears": 5.7,
+    "averageMaxYears": null,
+    "seniorityDistribution": {
+      "Senior": 1,
+      "not listed": 6,
+      "Staff / Principal": 1
+    }
+  },
+  "educationRequirements": {
+    "postingsRequiringDegree": 6,
+    "distribution": {
+      "Bachelor's in Computer Science or equivalent": 1,
+      "Bachelors in STEM": 1,
+      "BS/MS/PhD in Computer Science, Computer Engineering, or related discipline (or equivalent demonstrated experience).": 1,
+      "Bachelor's Degree in Computer Science, Software, Electrical or Computer Engineering": 1,
+      "not listed": 2,
+      "Degree in Software Engineering, Computer Science, or related field": 1,
+      "Bachelor's degree in computer science, Engineering or relevant experience": 1
+    }
+  },
+  "salary": {
+    "postingsWithSalary": 4,
+    "min": 88004.8,
+    "max": 288000,
+    "median": 133046.8,
+    "currency": "CAD",
+    "normalizationNote": "Some postings listed hourly/monthly pay; those were annualized (hourly x 2080 hrs/year, monthly x 12) so all figures below are comparable yearly amounts."
+  },
+  "remoteDistribution": {
+    "not listed": 4,
+    "remote": 1,
+    "hybrid": 3
+  },
+  "commonResponsibilityThemes": [
+    "Develop software applications and systems using various programming languages and tools",
+    "Collaborate with cross-functional teams including design, project management, and end-users",
+    "Implement and optimize APIs and integrate systems",
+    "Automate processes and build CI/CD pipelines",
+    "Participate in the full software development lifecycle (SDLC)",
+    "Mentor junior developers and lead by example",
+    "Conduct testing and validation of software and systems",
+    "Troubleshoot and resolve technical issues"
+  ],
+  "trends": [
+    "High demand for proficiency in Python, C++, and Java among software developers",
+    "Increasing emphasis on DevOps practices and CI/CD automation in software development roles",
+    "Companies increasingly value collaborative skills, highlighting the importance of teamwork and mentoring in job descriptions",
+    "A noticeable trend towards hybrid and remote work opportunities, with many postings not specifying work arrangements, suggesting flexibility",
+    "Emphasis on the need for candidates with experience in AI, machine learning, and cloud technologies, reflecting industry shifts towards more advanced tech solutions"
+  ],
+  "industryAndCultureExpectations": [
+    "A strong focus on technical skills and relevant experience is expected, with many job postings requiring a bachelor’s degree in a related field",
+    "The culture tends to prioritize continuous learning and professional development, with many firms indicating mentorship roles and growth opportunities",
+    "There seems to be a collective emphasis on ethical standards and inclusivity, as seen in job postings from both corporate and fintech sectors",
+    "Agility and the ability to adapt to changing environments are key – as shown by the recurring mention of Agile methodologies and a fast-paced work environment"
+  ]
+}

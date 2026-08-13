@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2023-10-01T12:00:00Z",
+  "strengths": [
+    {
+      "area": "Programming Skills",
+      "evidence": "Skills: Python, SQL, Node.js, REST APIs",
+      "marketRelevance": "Python is required in 63% of postings; SQL and REST are each present in 25% of postings."
+    },
+    {
+      "area": "Collaboration",
+      "evidence": "Soft skills: collaboration",
+      "marketRelevance": "Collaboration is emphasized in the culture of most job postings."
+    },
+    {
+      "area": "Agile Methodologies",
+      "evidence": "Keywords: Agile Development",
+      "marketRelevance": "Agility is critical due to the emphasis on fast-paced environments in job postings."
+    }
+  ],
+  "gaps": [
+    {
+      "skillOrArea": "C++ Proficiency",
+      "marketDemand": "C++ is required in 50% of postings",
+      "currentStatus": "Not listed on the resume",
+      "triageLevel": "medium-term",
+      "specificAction": "Complete the C++ Programming Certificate offered by the University of Washington's Professional & Continuing Education. More info can be found here: https://www.pce.uw.edu/certificates/c-plus-plus-programming",
+      "estimatedEffort": "3 courses, estimated 3-6 months"
+    },
+    {
+      "skillOrArea": "Java Proficiency",
+      "marketDemand": "Java is mentioned in 50% of postings",
+      "currentStatus": "Not listed on the resume",
+      "triageLevel": "medium-term",
+      "specificAction": "Take the Free Java Certification Course from Intellipaat. It covers essential Java programming skills and is self-paced. You can view it here: https://intellipaat.com/academy/course/java-free-course",
+      "estimatedEffort": "Self-paced, estimate 20 hours"
+    },
+    {
+      "skillOrArea": "AWS Experience",
+      "marketDemand": "AWS is requested in 25% of postings",
+      "currentStatus": "Not listed on the resume",
+      "triageLevel": "short-term",
+      "specificAction": "Enroll in the AWS for Beginners free course offered by MyGreatLearning. Access it here: https://www.mygreatlearning.com/academy/learn-for-free/courses/aws-for-beginners1",
+      "estimatedEffort": "About 10 hours"
+    },
+    {
+      "skillOrArea": "SQL Advanced Proficiency",
+      "marketDemand": "SQL is included in 25% of postings",
+      "currentStatus": "Basic SQL skills listed, not advanced",
+      "triageLevel": "short-term",
+      "specificAction": "Complete the Free SQL Certification Course on Intellipaat, which covers advanced SQL skills. The course is available here: https://intellipaat.com/academy/course/sql-free-course",
+      "estimatedEffort": "Estimated 15 hours"
+    },
+    {
+      "skillOrArea": "C# Knowledge",
+      "marketDemand": "C# is mentioned in 38% of postings",
+      "currentStatus": "Not listed on the resume",
+      "triageLevel": "medium-term",
+      "specificAction": "Consider taking the C# Fundamentals course offered on Microsoft Learn to enhance your programming skills. More information is available on the Microsoft Learn platform.",
+      "estimatedEffort": "Estimated 2 months for fundamentals"
+    }
+  ],
+  "uniqueValue": [
+    "Interdisciplinary Background in Finance and Computer Science",
+    "Proven Results in Project Management, improving project completion rates from 20% to 95%"
+  ],
+  "summary": "You possess strong fundamental programming skills, particularly in Python and SQL, along with valuable soft skills in collaboration and adaptability. However, enhancing your capabilities in C++, Java, AWS, and SQL would significantly improve your alignment with market demands, making you a more competitive candidate."
+}

@@ -1,0 +1,69 @@
+{
+  "jobTitle": "Software Engineer (Python/PL-SQL)",
+  "companyName": "Scotiabank",
+  "location": "Toronto, Ontario, Canada",
+  "remoteStatus": "not listed",
+  "postingAgeDays": 0,
+  "postingAgeNote": "The posting was captured on the same day it was published, which is 2026-08-10.",
+  "keyResponsibilities": [
+    "Work closely with end users, and business teams to understand business needs, conduct gap analysis and requirements assessments as needed",
+    "Partner with Architecture on the design and integration",
+    "Deliver and enhance new and current solutions and applications",
+    "Be involved in the full life cycle of a project, responsible for producing actionable and complete specifications, writing production quality code, and implementation",
+    "Design, deliver and implement a database schema",
+    "Design test sets and automate where possible, including functional and non functional testing, regression testing as well as performance testing",
+    "Write deployment scripts and leverage tools such as the Accelerator pipeline to promote code",
+    "Support the solution in production (as needed)",
+    "Improve the end user experience by finding scalable solutions and addressing complex ad hoc queries.",
+    "Effectively communicate with technical and non-technical audiences",
+    "Able to work with and refactor legacy code (as needed).",
+    "Coach and train end users (as needed).",
+    "Participate and run SCRUM Meetings (as needed)."
+  ],
+  "requiredSkills": [
+    "Python",
+    "PL/SQL",
+    "PostgreSQL",
+    "MSSQL",
+    "Oracle",
+    "Agile",
+    "Messaging Frameworks",
+    "Kafka",
+    "Redis",
+    "Java"
+  ],
+  "preferredSkills": [
+    "batch scripting"
+  ],
+  "experience": {
+    "minYears": 4,
+    "maxYears": null,
+    "seniorityLevel": null
+  },
+  "educationRequirements": "Bachelor's degree in computer science, Engineering or relevant experience",
+  "salary": {
+    "listed": false,
+    "min": null,
+    "max": null,
+    "currency": null,
+    "period": "not listed"
+  },
+  "companyResearch": {
+    "summary": "Scotiabank is a Canadian multinational banking and financial services company headquartered in Toronto. It is one of Canada's Big Five banks, employing over 80,000 people globally, and serves more than 25 million customers through a variety of financial services.",
+    "signals": [
+      "Industry: Banking and Financial Services",
+      "Employees: 80,000+",
+      "In 2026, reported Q2 net income reaching $2,632 million, reflecting strong revenue growth.",
+      "Recognized as one of Canada's top 100 employers for its inclusive culture and commitment to employee engagement."
+    ],
+    "sourcesConsulted": [
+      "https://en.wikipedia.org/wiki/Scotiabank",
+      "https://scotiabank.investorroom.com/2025-11-21-Scotiabank-Earns-Spot-Among-Canadas-Top-100-Employers",
+      "https://www.greatplacetowork.com/worlds-best-profile/scotiabank"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Software Engineer (Python_PL-SQL) Job Details _ Scotiabank.pdf",
+  "slug": "software-engineer-python-pl-sql-job-details-scotiabank",
+  "extractedAt": "2026-08-10T18:19:04.515Z"
+}

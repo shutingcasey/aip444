@@ -1,0 +1,80 @@
+{
+  "jobTitle": "Principal Software Developer – AI/ML Performance Validation & Systems Testing",
+  "companyName": "Advanced Micro Devices",
+  "location": "MARKHAM, Canada",
+  "remoteStatus": "hybrid",
+  "postingAgeDays": 0,
+  "postingAgeNote": "The posting was captured on the same day it was created.",
+  "keyResponsibilities": [
+    "Own the end-to-end validation architecture for ROCm across multiple GPU generations and server platforms.",
+    "Define release-qualification gates and exit criteria for ROCm software releases.",
+    "Architect the test infrastructure including distributed test runners and result data lakes.",
+    "Champion modern, agile quality engineering practices.",
+    "Set the bar for GitHub-based quality workflows.",
+    "Lead complex escalation debug with development and customer-facing teams.",
+    "Influence the roadmap for next-generation GPUs and platforms.",
+    "Mentor Senior and Staff validation engineers and SQA leads.",
+    "Represent ROCm validation externally in strategic engagements.",
+    "Lead system-level testing for server nodes, including multi-GPU configurations."
+  ],
+  "requiredSkills": [
+    "Python",
+    "C++",
+    "ROCm",
+    "CUDA",
+    "oneAPI",
+    "SYCL",
+    "PyTorch",
+    "TensorFlow",
+    "JAX",
+    "Triton",
+    "vLLM",
+    "MPI",
+    "RCCL",
+    "NCCL",
+    "UCX",
+    "Libfabric"
+  ],
+  "preferredSkills": [
+    "HPC",
+    "Linux",
+    "GitHub",
+    "Jenkins",
+    "CI",
+    "BMC",
+    "IPMI",
+    "Redfish",
+    "PDU"
+  ],
+  "experience": {
+    "minYears": null,
+    "maxYears": null,
+    "seniorityLevel": null
+  },
+  "educationRequirements": "BS/MS/PhD in Computer Science, Computer Engineering, or related discipline (or equivalent demonstrated experience).",
+  "salary": {
+    "listed": true,
+    "min": 192000,
+    "max": 288000,
+    "currency": "CAD",
+    "period": "yearly"
+  },
+  "companyResearch": {
+    "summary": "Advanced Micro Devices (AMD) is a public company headquartered in Santa Clara, CA, known for its innovation in semiconductor technology. The company focuses on high-performance computing and graphics products. Recently, AMD has been advancing its AI and machine learning capabilities across various platforms.",
+    "signals": [
+      "Public company",
+      "31,000 employees",
+      "Semiconductors industry",
+      "Focus on AI and high-performance computing"
+    ],
+    "sourcesConsulted": [
+      "https://pitchbook.com/profiles/company/12221-02",
+      "https://finance.yahoo.com/quote/AMD/profile",
+      "https://www.globaldata.com/company-profile/advanced-micro-devices-inc"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Principal Software Developer – AI_ML Performance Validation & Systems Testing in MARKHAM, Canada _ Advanced Micro Devices, Inc.pdf",
+  "slug": "principal-software-developer-ai-ml-performance-validation-systems-testing-in-markham-canada-advanced-micro-devices-inc",
+  "extractedAt": "2026-08-10T18:18:04.941Z"
+}

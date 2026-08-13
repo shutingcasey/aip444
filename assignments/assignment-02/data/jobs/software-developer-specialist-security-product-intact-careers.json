@@ -1,0 +1,78 @@
+{
+  "jobTitle": "Software Developer Specialist - Security Product",
+  "companyName": "Intact Financial Corporation",
+  "location": "",
+  "remoteStatus": "hybrid",
+  "postingAgeDays": 0,
+  "postingAgeNote": "The posting was captured on the same date it was posted (2026-08-10).",
+  "keyResponsibilities": [
+    "Architect and build reusable services, APIs, and libraries that operationalize application security best practices at scale.",
+    "Implement features and enhancements across backend and/or frontend components.",
+    "Write clean, maintainable code.",
+    "Create automation that orchestrates compliance evaluation",
+    "Develop self-service security products that streamline SSDLC and accelerate secure delivery.",
+    "Implement AI-assisted capabilities for contextual vulnerability triage, and proactive guardrails.",
+    "Automate posture analytics and executive-ready dashboards (Grafana, Power BI) to surface trends, coverage, and risk signals.",
+    "Work closely with product, architect, and design to ensure functionality meets user needs.",
+    "Drive adoption through demos, guidance, and workshops."
+  ],
+  "requiredSkills": [
+    "Java",
+    "Python",
+    "Go",
+    "Node.js",
+    "TypeScript",
+    "Spring Boot",
+    "Express.js",
+    "NestJS",
+    "Angular",
+    "React",
+    "Next.js",
+    "REST",
+    "GraphQL",
+    "SQL",
+    "NoSQL",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Azure",
+    "GCP"
+  ],
+  "preferredSkills": [
+    "ServiceNow AVR",
+    "CISSP",
+    "CEH"
+  ],
+  "experience": {
+    "minYears": 7,
+    "maxYears": null,
+    "seniorityLevel": null
+  },
+  "educationRequirements": "Degree in Software Engineering, Computer Science, or related field",
+  "salary": {
+    "listed": true,
+    "min": 118700,
+    "max": 145100,
+    "currency": null,
+    "period": "yearly"
+  },
+  "companyResearch": {
+    "summary": "Intact Financial Corporation is the largest property and casualty insurer in Canada, with operations also in the UK, Ireland, Europe, and the USA. The company specializes in providing insurance products for individuals and businesses, having been founded in 1809 and rebranded in 2009 from its origins as ING Canada.",
+    "signals": [
+      "32000 employees",
+      "Industry: Insurance - Property & Casualty",
+      "Headquarters: Toronto, Ontario, Canada",
+      "Revenue: $21.8 billion",
+      "Profits: $2.5 billion"
+    ],
+    "sourcesConsulted": [
+      "https://finance.yahoo.com/quote/I5U.F/profile",
+      "https://www.forbes.com/companies/intact-financial",
+      "https://en.wikipedia.org/wiki/Intact_Financial"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Software Developer Specialist - Security Product _ Intact Careers.pdf",
+  "slug": "software-developer-specialist-security-product-intact-careers",
+  "extractedAt": "2026-08-10T18:18:48.677Z"
+}

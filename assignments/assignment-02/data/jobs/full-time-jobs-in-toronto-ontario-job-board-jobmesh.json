@@ -1,0 +1,56 @@
+{
+  "jobTitle": "Senior Software Developer",
+  "companyName": "Avant Imaging and Integrated Media Inc.",
+  "location": "Toronto, Ontario",
+  "remoteStatus": "not listed",
+  "postingAgeDays": 0,
+  "postingAgeNote": "The posting was captured on the same day it was published.",
+  "keyResponsibilities": [
+    "Maintain and optimize advanced web and batch applications",
+    "Develop effective data processing pipelines and procedures",
+    "Integrate APIs and document processing platforms",
+    "Support development through all stages of SDLC",
+    "Collaborate with UI designers for user-friendly applications"
+  ],
+  "requiredSkills": [
+    "C++",
+    "C#",
+    "SQL",
+    ".NET",
+    "Visual Studio"
+  ],
+  "preferredSkills": [
+    "Node.js",
+    "Java"
+  ],
+  "experience": {
+    "minYears": null,
+    "maxYears": null,
+    "seniorityLevel": "Senior"
+  },
+  "educationRequirements": "Bachelor's in Computer Science or equivalent",
+  "salary": {
+    "listed": false,
+    "min": null,
+    "max": null,
+    "currency": null,
+    "period": "not listed"
+  },
+  "companyResearch": {
+    "summary": "Avant Imaging and Integrated Media Inc. focuses on providing omni-channel marketing communications solutions.",
+    "signals": [
+      "51-200 employees",
+      "Industries include Advertising & Marketing, Business Services, and Commercial Printing.",
+      "The company has been expanding its product offerings and service capabilities."
+    ],
+    "sourcesConsulted": [
+      "https://www.datanyze.com/companies/avant-imaging-and-integrated-media/6017998",
+      "https://www.newswire.ca/news-releases/avant-imaging-amp-integrated-media-inc-aiim-announces-rto-with-corre-846908012.html",
+      "https://www.vegvisircapital.com/news/avant-imaging-and-integrated-media-ulc-acquires-cover-all-computer-services-corp"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Full-time jobs in Toronto, Ontario - Job board - JobMESH.pdf",
+  "slug": "full-time-jobs-in-toronto-ontario-job-board-jobmesh",
+  "extractedAt": "2026-08-10T18:17:32.024Z"
+}

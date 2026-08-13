@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables (contains API keys)
+.env
+.envrc
+
+# Raw personal input files (job posting PDFs, resume) — not committed, see README
+input/
+
+# OS
+.DS_Store
+Thumbs.db

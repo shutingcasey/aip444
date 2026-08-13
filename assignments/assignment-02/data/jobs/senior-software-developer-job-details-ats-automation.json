@@ -1,0 +1,68 @@
+{
+  "jobTitle": "Senior Software Developer",
+  "companyName": "ATS Automation",
+  "location": "Woodbridge, ON, CA, L4L 8K9",
+  "remoteStatus": "not listed",
+  "postingAgeDays": 3,
+  "postingAgeNote": "The posting was originally captured on 2026-08-10 and is dated 2026-08-07.",
+  "keyResponsibilities": [
+    "Designs and implements custom software based on customer and project requirements.",
+    "Develop C# and .NET code for Test Executive and SAMS software products.",
+    "Develop software in C/C++ for microcontroller hardware targets (Arduino, Raspberry Pi).",
+    "Design and implement SCADA systems using ATS Test software packages, or LabVIEW, or Python.",
+    "Debug and commission test system programs on the shop floor during systems integration stage and on the customer’s site during installation.",
+    "Work with customers, project managers, software developers, designers, toolmakers, and technicians to solve problems.",
+    "Informs customer project personnel regarding documentation and advises them on solving technical problems.",
+    "Provide customer with training specific to their current project.",
+    "Willingness to travel up to 25%.",
+    "Ensure that all business activities are performed with the highest ethical standards."
+  ],
+  "requiredSkills": [
+    "C#",
+    ".NET",
+    "C",
+    "C++",
+    "Arduino",
+    "Raspberry Pi",
+    "SCADA",
+    "LabVIEW",
+    "Python",
+    "GitHub",
+    "Jira"
+  ],
+  "preferredSkills": [
+    "TCP/IP",
+    "CAN",
+    "LIN"
+  ],
+  "experience": {
+    "minYears": 5,
+    "maxYears": null,
+    "seniorityLevel": null
+  },
+  "educationRequirements": "Bachelor's Degree in Computer Science, Software, Electrical or Computer Engineering",
+  "salary": {
+    "listed": true,
+    "min": 42.31,
+    "max": 58.17,
+    "currency": "CAD",
+    "period": "hourly"
+  },
+  "companyResearch": {
+    "summary": "ATS Automation is an industry-leading automation solutions provider with approximately 7,500 employees, focusing on various industries including life sciences, transportation, and consumer products. The company recently expanded its operations significantly, including a major investment in manufacturing.",
+    "signals": [
+      "Industry: Automated Machinery and Equipment",
+      "Employees: 5,001-10,000",
+      "Recent expansion with significant investments in manufacturing.",
+      "Acquired Avidity Science for $195 million in September 2023."
+    ],
+    "sourcesConsulted": [
+      "https://www.waterlooedc.ca/blog/manufacturing-giant-ats-major-expansion",
+      "https://en.wikipedia.org/wiki/ATS_Corporation"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Senior Software Developer Job Details _ ATS Automation.pdf",
+  "slug": "senior-software-developer-job-details-ats-automation",
+  "extractedAt": "2026-08-10T18:18:18.639Z"
+}

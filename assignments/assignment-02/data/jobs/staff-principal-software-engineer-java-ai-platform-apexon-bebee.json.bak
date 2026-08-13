@@ -1,0 +1,61 @@
+{
+  "jobTitle": "Staff / Principal Software Engineer",
+  "companyName": "Apexon",
+  "location": "Toronto, Canada",
+  "remoteStatus": "hybrid",
+  "postingAgeDays": 3,
+  "postingAgeNote": "The job was posted 3 days ago from the captured date.",
+  "keyResponsibilities": [],
+  "requiredSkills": [
+    "Java",
+    "Spring Boot",
+    "Microservices",
+    "Distributed Systems",
+    "Software Architecture",
+    "System Design",
+    "AWS",
+    "Kafka"
+  ],
+  "preferredSkills": [
+    "Python",
+    "Databricks",
+    "AI",
+    "Machine Learning",
+    "Cloudflare",
+    "Akamai EdgeWorkers",
+    "JWT",
+    "OAuth 2.0"
+  ],
+  "experience": {
+    "minYears": 10,
+    "maxYears": null,
+    "seniorityLevel": null
+  },
+  "educationRequirements": null,
+  "salary": {
+    "listed": false,
+    "min": null,
+    "max": null,
+    "currency": null,
+    "period": "not listed"
+  },
+  "companyResearch": {
+    "summary": "Apexon is an IT Services and Consulting firm based in Santa Clara, CA, with a global presence of 5,001-10,000 employees. The company specializes in business transformation, AI, and digital engineering. Apexon is recognized for its commitment to employee satisfaction, earning certifications as a 'Great Place to Work' in several countries, and emphasizes continuous learning and community involvement. Recent news highlights their partnership with Dataiku to enhance AI adoption in regulated industries, indicating a focus on innovative technology solutions.",
+    "signals": [
+      "IT Services and IT Consulting industry",
+      "5,001-10,000 employees",
+      "Recognized as 'Great Place to Work'",
+      "Focus on AI and digital engineering",
+      "Recent partnership with Dataiku"
+    ],
+    "sourcesConsulted": [
+      "https://www.apexon.com/about",
+      "https://builtin.com/company/apexon",
+      "https://www.prnewswire.com/news-releases/apexon-joins-forces-with-dataiku-to-enable-enterprise-ai-adoption-in-regulated-industries-302452215.html"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Staff _ Principal Software Engineer – Java _ AI Platform - Apexon _ BeBee.pdf",
+  "slug": "staff-principal-software-engineer-java-ai-platform-apexon-bebee",
+  "extractedAt": "2026-08-10T18:19:20.363Z"
+}

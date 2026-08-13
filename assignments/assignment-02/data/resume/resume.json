@@ -1,0 +1,92 @@
+{
+  "candidateName": "Shu-Ting (Casey) Hsu",
+  "hardSkills": [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "SQL",
+    "React",
+    "Next.js",
+    "HTML",
+    "CSS",
+    "Redux",
+    "Node.js",
+    "Express.js",
+    "REST APIs",
+    "PostgreSQL",
+    "MongoDB",
+    "Git",
+    "GitHub",
+    "Docker",
+    "Azure DevOps",
+    "Postman"
+  ],
+  "softSkills": [
+    "collaboration"
+  ],
+  "workExperience": [
+    {
+      "role": "Developer / Software Tester Co-op",
+      "company": "Ontario Government",
+      "startDate": "2025-05",
+      "endDate": "2025-12",
+      "responsibilities": [
+        "Collaborating with developers, business analysts, and QA."
+      ],
+      "achievements": []
+    },
+    {
+      "role": "AI-Powered Flashcard Generator",
+      "company": "Personal Project",
+      "startDate": "2026-05",
+      "endDate": "2026-08",
+      "responsibilities": [
+        "Developed a full-stack flashcard generation application using Python, TypeScript, OpenAI/OpenRouter APIs, and structured outputs.",
+        "Implemented schema validation using Zod to ensure reliable JSON responses.",
+        "Designed prompt engineering workflows to improve output quality and reduce hallucinations."
+      ],
+      "achievements": []
+    },
+    {
+      "role": "OPS Hackathon – Team Data Lead",
+      "company": "Ontario Government",
+      "startDate": "2025-05",
+      "endDate": "2025-12",
+      "responsibilities": [
+        "Contributed to the modernization of a government web application, helping improve project completion from 20% to 95% while replacing legacy Power Apps solutions.",
+        "Developed and tested web application features using Power Pages, JavaScript, HTML, CSS, and Liquid.",
+        "Supported quality and validation processes critical to regulatory reporting and enterprise compliance."
+      ],
+      "achievements": [
+        "helping improve project completion from 20% to 95%",
+        "received the highest rating level in client user evaluations"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Advanced Diploma",
+      "institution": "Seneca Polytechnic",
+      "field": "Computer Programming & Analysis",
+      "graduationYear": "2025-12",
+      "relevantCoursework": []
+    },
+    {
+      "degree": "Bachelor's Degree",
+      "institution": "Feng Chia University",
+      "field": "Finance",
+      "graduationYear": "2018-09",
+      "relevantCoursework": []
+    }
+  ],
+  "certifications": [],
+  "projects": [],
+  "keywordsAndDomainExpertise": [
+    "Accessibility",
+    "Agile Development",
+    "REST APIs",
+    "Prompt Engineering"
+  ],
+  "sourceFile": "ShuTingHsu_resume.pdf",
+  "extractedAt": "2026-08-10T18:27:37.074Z"
+}

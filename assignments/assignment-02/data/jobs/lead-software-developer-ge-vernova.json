@@ -1,0 +1,64 @@
+{
+  "jobTitle": "Lead Software Developer",
+  "companyName": "GE Vernova",
+  "location": "Markham, ON, CA",
+  "remoteStatus": "remote",
+  "postingAgeDays": 3,
+  "postingAgeNote": "The job posting was created on 2026-08-07.",
+  "keyResponsibilities": [
+    "Prepare design specifications to deliver product requirements defined by product management and product owner.",
+    "Lead and mentor Professional Band developers.",
+    "Collaborate, contribute, estimate and advise upper management and NPI teams for product development plans.",
+    "Handle critical customer and business issues.",
+    "Lead Root Cause Analysis (RCA) investigations.",
+    "Develop PC based applications for configuring Gateways and RTUs.",
+    "Develop software modules as part of agile iterations.",
+    "Work with software validation teams to support automated test frameworks.",
+    "Identify and report defects during peer reviews and unit testing.",
+    "Support resolution of field and customer issues for tier 3/4 cases."
+  ],
+  "requiredSkills": [
+    "C#",
+    "Java",
+    "C++",
+    "Javascript"
+  ],
+  "preferredSkills": [
+    "UML",
+    "XML",
+    "Agile",
+    "SDLC",
+    "Delphi"
+  ],
+  "experience": {
+    "minYears": 5,
+    "maxYears": null,
+    "seniorityLevel": "not listed"
+  },
+  "educationRequirements": "Bachelors in STEM",
+  "salary": {
+    "listed": true,
+    "min": 110500,
+    "max": 165800,
+    "currency": "CAD",
+    "period": "yearly"
+  },
+  "companyResearch": {
+    "summary": "GE Vernova operates as a global energy company and is a part of the Industrial sector, dealing primarily in the Specialty Industrial Machinery industry. The company is a large entity with approximately 78,000 employees. GE Vernova specializes in technologies and services for electricity generation, transmission, and distribution, including power generation technologies such as gas, nuclear, and wind.",
+    "signals": [
+      "Approximately 78,000 employees",
+      "Operates in the Specialty Industrial Machinery industry",
+      "Focuses on energy generation and decarbonization technologies",
+      "Global leader in electric power solutions"
+    ],
+    "sourcesConsulted": [
+      "https://6sense.com/tech/energy-and-utilities-vertical-software/ge-vernova-market-share",
+      "https://finance.yahoo.com/quote/GEV/profile",
+      "https://en.wikipedia.org/wiki/GE_Vernova"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Lead Software developer _ GE Vernova.pdf",
+  "slug": "lead-software-developer-ge-vernova",
+  "extractedAt": "2026-08-10T18:17:54.423Z"
+}

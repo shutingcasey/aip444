@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Application Report — Full Stack Developer (Software Engineer) @ Compass Group Canada</title>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card-bg: #ffffff;
+    --text: #1a1d23;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #4f46e5;
+    --green-bg: #ecfdf5; --green-border: #10b981; --green-text: #047857;
+    --yellow-bg: #fffbeb; --yellow-border: #f59e0b; --yellow-text: #b45309;
+    --red-bg: #fef2f2; --red-border: #ef4444; --red-text: #b91c1c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header.page-header { margin-bottom: 24px; }
+  header.page-header h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  header.page-header .sub { color: var(--muted); font-size: 0.95rem; }
+  section.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  section.card h2 { margin-top: 0; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+  .muted { color: var(--muted); }
+
+  .verdict-banner {
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    border: 2px solid;
+  }
+  .verdict-green { background: var(--green-bg); border-color: var(--green-border); color: var(--green-text); }
+  .verdict-yellow { background: var(--yellow-bg); border-color: var(--yellow-border); color: var(--yellow-text); }
+  .verdict-red { background: var(--red-bg); border-color: var(--red-border); color: var(--red-text); }
+  .verdict-banner h2 { margin: 0 0 8px; font-size: 1.3rem; }
+  .verdict-banner .confidence { font-size: 0.85rem; opacity: 0.85; margin-bottom: 8px; }
+  .verdict-banner .recommendation { font-weight: 600; }
+
+  ul.signals { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; }
+  .signal { border-radius: 8px; padding: 10px 14px; border: 1px solid var(--border); background: #fafafa; }
+  .signal-red { border-left: 4px solid var(--red-border); }
+  .signal-green { border-left: 4px solid var(--green-border); }
+  .signal-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); margin-right: 6px; }
+  .signal-evidence { color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
+
+  .score-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .score-circle {
+    width: 110px; height: 110px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .score-strong .score-circle, .score-strong .score-label { background: #10b981; }
+  .score-good .score-circle, .score-good .score-label { background: #3b82f6; }
+  .score-stretch .score-circle, .score-stretch .score-label { background: #f59e0b; }
+  .score-growth .score-circle, .score-growth .score-label { background: #6b7280; }
+  .score-strong .score-circle { background: #10b981; }
+  .score-good .score-circle { background: #3b82f6; }
+  .score-stretch .score-circle { background: #f59e0b; }
+  .score-growth .score-circle { background: #6b7280; }
+  .score-label { display: inline-block; color: #fff; padding: 4px 12px; border-radius: 999px; font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; }
+  .score-text-wrap { flex: 1; min-width: 240px; }
+
+  table.breakdown { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.92rem; }
+  table.breakdown th { text-align: left; color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 10px; border-bottom: 2px solid var(--border); }
+  table.breakdown td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .status-badge { padding: 2px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
+  .status-met { background: var(--green-bg); color: var(--green-text); }
+  .status-partial { background: var(--yellow-bg); color: var(--yellow-text); }
+  .status-gap { background: var(--red-bg); color: var(--red-text); }
+
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin-bottom: 6px; }
+
+  .meta-strip { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); margin-top: 8px; }
+  .meta-strip span { background: #eef2ff; color: var(--accent); padding: 3px 10px; border-radius: 999px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page-header">
+    <h1>Full Stack Developer (Software Engineer) — Compass Group Canada</h1>
+    <div class="sub">Application report generated 2026-08-13 for candidate Shu-Ting (Casey) Hsu</div>
+    <div class="meta-strip">
+      <span>Toronto, ON</span>
+      <span>hybrid</span>
+      <span>CAD 100000–120000 / yearly</span>
+    </div>
+  </header>
+
+  <div class="verdict-banner verdict-green">
+    <h2>Legitimacy Assessment: Looks Legitimate</h2>
+    <div class="confidence">Confidence: 95/100 &middot; Domain checked: compass-canada.com</div>
+    <div class="recommendation">This posting appears legitimate.</div>
+    <ul class="signals"><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Established web presence</strong><div class="signal-evidence">Company has a strong presence on LinkedIn, Indeed, and recognized as a Great Place to Work.</div></li><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Domain registered for years</strong><div class="signal-evidence">Domain was registered on October 6, 1999.</div></li><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Job listed on the company's official careers page</strong><div class="signal-evidence">Job posting found on https://careers.compass-canada.com.</div></li><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Contact email matches company domain</strong><div class="signal-evidence">Application process uses company domain.</div></li><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Salary consistent with market data</strong><div class="signal-evidence">Listed salary of CAD 100,000 - 120,000 aligns with market salary data.</div></li></ul>
+  </div>
+
+  <section class="card">
+    <h2>Fit Assessment</h2>
+    <div class="score-row score-good">
+      <div class="score-circle">50%</div>
+      <div class="score-text-wrap">
+        <div class="score-label">Good fit — apply and highlight strengths</div>
+        <p>You have a solid foundation with your TypeScript skills and relevant work experience that aligns well with the core competencies of this role. Highlight your collaborative work on projects and your enthusiasm for user experience in your application.</p>
+      </div>
+    </div>
+    <table class="breakdown">
+      <thead><tr><th>Requirement</th><th>Status</th><th>Evidence</th></tr></thead>
+      <tbody><tr><td>Vue</td><td><span class="status-badge status-gap">Gap</span></td><td>Vue is not mentioned in the resume.</td></tr><tr><td>Typescript</td><td><span class="status-badge status-met">Met</span></td><td>Strong skills in TypeScript are highlighted in your resume.</td></tr><tr><td>AWS</td><td><span class="status-badge status-gap">Gap</span></td><td>No AWS experience is mentioned in the resume.</td></tr><tr><td>Serverless</td><td><span class="status-badge status-gap">Gap</span></td><td>Serverless architecture is not referenced in the resume.</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Resume Adaptation</h2>
+    <ul><li>Add any relevant experience or coursework related to Vue.js to demonstrate your adaptability.</li><li>Include any personal projects that involved AWS or serverless architecture, or mention your eagerness to learn and implement these technologies.</li><li>Highlight your full-stack experience, particularly your work with JavaScript and TypeScript, to align with the key responsibilities outlined in the posting.</li></ul>
+  </section>
+
+  <section class="card">
+    <h2>Cover Letter Guidance</h2>
+    <h3>Key points to emphasize</h3>
+    <ul><li>Your TypeScript and web development skills that align with the key responsibilities.</li><li>Your experience in collaborating with diverse teams to enhance user experience, which resonates with the company’s focus on usability and accessibility.</li><li>Your proactive approach in your personal projects, such as the AI-Powered Flashcard Generator, showcasing your commitment to quality code and innovative solutions.</li></ul>
+    <h3>Addressing gaps</h3>
+    <p>Frame your gaps in AWS and Vue as areas of active interest and growth, emphasizing your quick learning abilities and past experiences in acquiring new skills swiftly.</p>
+    <h3>Company-specific angles</h3>
+    <ul><li>Mention Compass Group Canada’s strong culture and recognition as a Great Place to Work, showcasing your alignment with their values.</li><li>Discuss your motivation to contribute to an innovative company in the foodservice and support services sector, and how your technical skills can enhance their services.</li></ul>
+  </section>
+
+  <section class="card">
+    <h2>Interview Prep</h2>
+    <h3>Likely questions</h3>
+    <ul><li>How have you implemented standards and best practices in your previous coding projects?</li><li>Can you give an example of how you've considered user experience in your development work?</li><li>What strategies would you employ to ensure code scalability and reliability?</li></ul>
+    <h3>Skills to brush up on</h3>
+    <ul><li>Vue.js fundamentals and specific use cases in full-stack development.</li><li>AWS core services and serverless architecture concepts.</li></ul>
+    <h3>Company research topics</h3>
+    <ul><li>Current projects or initiatives by Compass Group Canada that relate to technology.</li><li>Recent awards or recognitions received that underline their company culture.</li></ul>
+    <h3>Talking points</h3>
+    <ul><li>Your successful project management experience, particularly improving project completion rates.</li><li>Interdisciplinary skills from your finance background, adding a unique approach to technical problem solving.</li></ul>
+  </section>
+
+  <footer>Generated by the Job Search Assistant (Assignment 2) &middot; source: Test Full Stack Developer Compass Canada Careers - Compass Group Canada Careers.pdf</footer>
+</div>
+</body>
+</html>

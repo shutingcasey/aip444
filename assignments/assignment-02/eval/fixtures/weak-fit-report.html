@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Application Report — Staff / Principal Software Engineer @ Apexon</title>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card-bg: #ffffff;
+    --text: #1a1d23;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #4f46e5;
+    --green-bg: #ecfdf5; --green-border: #10b981; --green-text: #047857;
+    --yellow-bg: #fffbeb; --yellow-border: #f59e0b; --yellow-text: #b45309;
+    --red-bg: #fef2f2; --red-border: #ef4444; --red-text: #b91c1c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 32px 20px 80px; }
+  header.page-header { margin-bottom: 24px; }
+  header.page-header h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  header.page-header .sub { color: var(--muted); font-size: 0.95rem; }
+  section.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  section.card h2 { margin-top: 0; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+  .muted { color: var(--muted); }
+
+  .verdict-banner {
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    border: 2px solid;
+  }
+  .verdict-green { background: var(--green-bg); border-color: var(--green-border); color: var(--green-text); }
+  .verdict-yellow { background: var(--yellow-bg); border-color: var(--yellow-border); color: var(--yellow-text); }
+  .verdict-red { background: var(--red-bg); border-color: var(--red-border); color: var(--red-text); }
+  .verdict-banner h2 { margin: 0 0 8px; font-size: 1.3rem; }
+  .verdict-banner .confidence { font-size: 0.85rem; opacity: 0.85; margin-bottom: 8px; }
+  .verdict-banner .recommendation { font-weight: 600; }
+
+  ul.signals { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; }
+  .signal { border-radius: 8px; padding: 10px 14px; border: 1px solid var(--border); background: #fafafa; }
+  .signal-red { border-left: 4px solid var(--red-border); }
+  .signal-green { border-left: 4px solid var(--green-border); }
+  .signal-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); margin-right: 6px; }
+  .signal-evidence { color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
+
+  .score-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .score-circle {
+    width: 110px; height: 110px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .score-strong .score-circle, .score-strong .score-label { background: #10b981; }
+  .score-good .score-circle, .score-good .score-label { background: #3b82f6; }
+  .score-stretch .score-circle, .score-stretch .score-label { background: #f59e0b; }
+  .score-growth .score-circle, .score-growth .score-label { background: #6b7280; }
+  .score-strong .score-circle { background: #10b981; }
+  .score-good .score-circle { background: #3b82f6; }
+  .score-stretch .score-circle { background: #f59e0b; }
+  .score-growth .score-circle { background: #6b7280; }
+  .score-label { display: inline-block; color: #fff; padding: 4px 12px; border-radius: 999px; font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; }
+  .score-text-wrap { flex: 1; min-width: 240px; }
+
+  table.breakdown { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.92rem; }
+  table.breakdown th { text-align: left; color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; padding: 6px 10px; border-bottom: 2px solid var(--border); }
+  table.breakdown td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .status-badge { padding: 2px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
+  .status-met { background: var(--green-bg); color: var(--green-text); }
+  .status-partial { background: var(--yellow-bg); color: var(--yellow-text); }
+  .status-gap { background: var(--red-bg); color: var(--red-text); }
+
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin-bottom: 6px; }
+
+  .meta-strip { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); margin-top: 8px; }
+  .meta-strip span { background: #eef2ff; color: var(--accent); padding: 3px 10px; border-radius: 999px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page-header">
+    <h1>Staff / Principal Software Engineer — Apexon</h1>
+    <div class="sub">Application report generated 2026-08-10 for candidate Shu-Ting (Casey) Hsu</div>
+    <div class="meta-strip">
+      <span>Toronto, Canada</span>
+      <span>hybrid</span>
+      <span>Salary not listed</span>
+    </div>
+  </header>
+
+  <div class="verdict-banner verdict-green">
+    <h2>Legitimacy Assessment: Looks Legitimate</h2>
+    <div class="confidence">Confidence: 95/100 &middot; Domain checked: apexon.com</div>
+    <div class="recommendation">This posting appears legitimate. Candidates can proceed with the application process.</div>
+    <ul class="signals"><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Established web presence</strong><div class="signal-evidence">Apexon has a strong presence verified through LinkedIn, company website, and employee satisfaction ratings.</div></li><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Domain registered for years</strong><div class="signal-evidence">Domain 'apexon.com' was registered on January 13, 2015.</div></li><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Contact email matches company domain</strong><div class="signal-evidence">Contact email yashvi.shah@apexon.com uses the official domain.</div></li><li class="signal signal-green"><span class="signal-tag">✓ Green flag</span> <strong>Specific, detailed requirements</strong><div class="signal-evidence">Job description outlines specific skills required for the Staff/Principal Software Engineer position.</div></li></ul>
+  </div>
+
+  <section class="card">
+    <h2>Fit Assessment</h2>
+    <div class="score-row score-stretch">
+      <div class="score-circle">35%</div>
+      <div class="score-text-wrap">
+        <div class="score-label">Stretch — worth applying</div>
+        <p>You meet some core requirements for this role, particularly your Python skills and project experience. Applying could be a beneficial step, especially if you're excited about the position. Emphasize your strengths and frame your enthusiasm for learning the required technologies like Java and AWS in your application.</p>
+      </div>
+    </div>
+    <table class="breakdown">
+      <thead><tr><th>Requirement</th><th>Status</th><th>Evidence</th></tr></thead>
+      <tbody><tr><td>Java</td><td><span class="status-badge status-gap">Gap</span></td><td>Java is not mentioned in the resume.</td></tr><tr><td>Spring Boot</td><td><span class="status-badge status-gap">Gap</span></td><td>Spring Boot is unmentioned in the resume.</td></tr><tr><td>Microservices</td><td><span class="status-badge status-gap">Gap</span></td><td>No specific mention of microservices in resume.</td></tr><tr><td>Distributed Systems</td><td><span class="status-badge status-gap">Gap</span></td><td>No specific mention of distributed systems in resume.</td></tr><tr><td>Software Architecture</td><td><span class="status-badge status-gap">Gap</span></td><td>No experience related to software architecture is listed.</td></tr><tr><td>System Design</td><td><span class="status-badge status-gap">Gap</span></td><td>No experience with system design mentioned.</td></tr><tr><td>AWS</td><td><span class="status-badge status-gap">Gap</span></td><td>No AWS knowledge or certification is listed.</td></tr><tr><td>Event-Driven Architecture</td><td><span class="status-badge status-gap">Gap</span></td><td>Not mentioned in the resume.</td></tr><tr><td>Kafka</td><td><span class="status-badge status-gap">Gap</span></td><td>Not mentioned in the resume.</td></tr><tr><td>AI-enabled platforms</td><td><span class="status-badge status-partial">Partial</span></td><td>Experience in AI through a personal project (AI-Powered Flashcard Generator).</td></tr><tr><td>ML integration services</td><td><span class="status-badge status-gap">Gap</span></td><td>Not mentioned in the resume.</td></tr><tr><td>AI coding tools</td><td><span class="status-badge status-gap">Gap</span></td><td>Not mentioned in the resume.</td></tr><tr><td>Python</td><td><span class="status-badge status-met">Met</span></td><td>Python is listed as a hard skill.</td></tr><tr><td>Databricks</td><td><span class="status-badge status-gap">Gap</span></td><td>Not mentioned in the resume.</td></tr><tr><td>Edge Computing</td><td><span class="status-badge status-gap">Gap</span></td><td>Not mentioned in the resume.</td></tr><tr><td>Identity &amp; Security</td><td><span class="status-badge status-gap">Gap</span></td><td>Not mentioned in the resume.</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Resume Adaptation</h2>
+    <ul><li>Add any relevant experience or self-studying related to Java, possibly mentioning coursework or projects where necessary.</li><li>Include any learning or practice with Spring Boot to a new section on your resume to demonstrate proactive growth.</li><li>If you have experience with microservices or distributed architecture in any capacity, highlight that, or frame any similar experience in existing projects.</li><li>Consider including AWS coursework you plan to undertake or discussing any foundational knowledge that may not currently be documented.</li><li>Mention your AI project more elaborately to emphasize your experience with AI, even if it's not yet classified under 'AI-enabled platforms'.</li></ul>
+  </section>
+
+  <section class="card">
+    <h2>Cover Letter Guidance</h2>
+    <h3>Key points to emphasize</h3>
+    <ul><li>Your experience in Python and its relevance in AI applications.</li><li>Your project contributions to the Ontario Government and how they relate to innovation and problem-solving in software engineering.</li><li>Your commitment to continuous learning and improvement, particularly regarding Java and AWS.</li></ul>
+    <h3>Addressing gaps</h3>
+    <p>Frame your gaps as opportunities for growth, demonstrating your enthusiasm to learn technologies like Java and AWS quickly and effectively, especially since you are already engaging with Python and relevant projects.</p>
+    <h3>Company-specific angles</h3>
+    <ul><li>Highlight Apexon's focus on AI, data, and digital solutions, positioning your AI-powered project in relation to their goals.</li><li>Discuss your excitement about working in financial services and how your unique background in finance can bring additional perspective to their client projects.</li></ul>
+  </section>
+
+  <section class="card">
+    <h2>Interview Prep</h2>
+    <h3>Likely questions</h3>
+    <ul><li>Can you explain your experience with Python and how it relates to AI applications?</li><li>Describe a project where you had to design a system or architecture despite your limited experience in software architecture.</li><li>How do you approach learning new technologies quickly, such as AWS or Spring Boot?</li></ul>
+    <h3>Skills to brush up on</h3>
+    <ul><li>Java</li><li>Spring Boot</li><li>AWS fundamentals</li></ul>
+    <h3>Company research topics</h3>
+    <ul><li>Recent projects or initiatives Apexon has been involved in specifically in AI and digital transformation.</li><li>The role of Apexon in the financial services or healthcare sectors and how it relates to their company mission.</li></ul>
+    <h3>Talking points</h3>
+    <ul><li>Your programming experience with Python and your innovative project that showcases AI capabilities.</li><li>Your ability to adapt and learn quickly in new environments, which is essential for filling any knowledge gaps for this role.</li></ul>
+  </section>
+
+  <footer>Generated by the Job Search Assistant (Assignment 2) &middot; source: Staff _ Principal Software Engineer – Java _ AI Platform - Apexon _ BeBee.pdf</footer>
+</div>
+</body>
+</html>

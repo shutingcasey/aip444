@@ -1,0 +1,70 @@
+{
+  "jobTitle": "Senior Software Developer, Security Automation",
+  "companyName": "Royal Bank of Canada",
+  "location": "Toronto, Ontario, Canada",
+  "remoteStatus": "not listed",
+  "postingAgeDays": 0,
+  "postingAgeNote": "The posting was captured on the same date it was posted (2026-08-10).",
+  "keyResponsibilities": [
+    "Design and develop automation playbooks, scripts, and orchestration workflows in Python...",
+    "Develop custom integrations in Python connecting XSOAR to internal platforms...",
+    "Build and maintain CI/CD pipelines for XSOAR content delivery...",
+    "Administer the XSOAR platform...",
+    "Partner with SOC analysts and detection engineers to gather requirements..."
+  ],
+  "requiredSkills": [
+    "Python",
+    "REST",
+    "Git",
+    "Jenkins",
+    "GitHub Actions",
+    "GitLab CI",
+    "pytest",
+    "unittest",
+    "Docker",
+    "Linux",
+    "JSON",
+    "YAML",
+    "XML"
+  ],
+  "preferredSkills": [
+    "Cortex XSOAR",
+    "Splunk SOAR",
+    "demisto-sdk",
+    "Spark",
+    "Hadoop",
+    "Kafka",
+    "Airflow"
+  ],
+  "experience": {
+    "minYears": 3,
+    "maxYears": null,
+    "seniorityLevel": null
+  },
+  "educationRequirements": null,
+  "salary": {
+    "listed": false,
+    "min": null,
+    "max": null,
+    "currency": null,
+    "period": "not listed"
+  },
+  "companyResearch": {
+    "summary": "Royal Bank of Canada is one of the largest banks in Canada, focused on leveraging AI across its businesses to enhance efficiency and revenue generation. The bank maintains strong commitments to an inclusive workplace and professional development, emphasizing its values of Client First, Collaboration, Accountability, Diversity & Inclusion, and Integrity.",
+    "signals": [
+      "94,838 employees",
+      "Industry: Financial Services",
+      "Extending Vector Institute sponsorship for AI innovation until 2032.",
+      "Named North America's Best Bank in Euromoney's 2026 awards."
+    ],
+    "sourcesConsulted": [
+      "https://www.globaldata.com/company-profile/royal-bank-of-canada",
+      "https://builtin.com/company/rbc/faq/culture-values",
+      "https://www.theglobeandmail.com/investing/markets/stocks/RY-T"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Senior Software Developer, Security Automation(Global Security) in TORONTO, Ontario, Canada _ Technology _ Analytics _ Research at RBC _ Jobs at RBC.pdf",
+  "slug": "senior-software-developer-security-automation-global-security-in-toronto-ontario-canada-technology-analytics-research-at-rbc-jobs-at-rbc",
+  "extractedAt": "2026-08-10T18:18:35.545Z"
+}

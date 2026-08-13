@@ -1,0 +1,64 @@
+{
+  "jobTitle": "Staff / Principal Software Engineer",
+  "companyName": "Apexon",
+  "location": "Toronto, Canada",
+  "remoteStatus": "hybrid",
+  "postingAgeDays": 3,
+  "postingAgeNote": "Derived from the posting stating it was posted 3 days ago from capture date.",
+  "keyResponsibilities": [
+    "Join a fast-paced R&D team building next-generation AI-enabled platforms.",
+    "Build systems from 0→1.",
+    "Thrive in ambiguity and innovate at the intersection of Java, Cloud, Edge Computing, and AI.",
+    "Develop and maintain applications using Java and Spring Boot.",
+    "Implement Microservices and Distributed Systems architecture.",
+    "Design software architecture and system solutions.",
+    "Utilize AWS services including Compute, Storage, IAM, and Networking."
+  ],
+  "requiredSkills": [
+    "Java",
+    "Spring Boot",
+    "Microservices",
+    "Distributed Systems",
+    "Software Architecture",
+    "System Design",
+    "AWS",
+    "Kafka"
+  ],
+  "preferredSkills": [
+    "Python",
+    "Databricks",
+    "Edge Computing",
+    "AI coding tools"
+  ],
+  "experience": {
+    "minYears": 10,
+    "maxYears": null,
+    "seniorityLevel": "Staff / Principal"
+  },
+  "educationRequirements": null,
+  "salary": {
+    "listed": false,
+    "min": null,
+    "max": null,
+    "currency": null,
+    "period": "not listed"
+  },
+  "companyResearch": {
+    "summary": "Apexon is a technology services firm known for its deep engineering expertise in IT Services and IT Consulting, particularly in sectors like Banking and Financial Services, Healthcare, and Life Sciences.",
+    "signals": [
+      "5,001-10,000 employees",
+      "IT Services and IT Consulting industry",
+      "Focus on AI, Data and Analytics, Digital Engineering",
+      "Promotes an inclusive workplace culture, especially for women in technology."
+    ],
+    "sourcesConsulted": [
+      "https://www.apexon.com/about",
+      "https://www.greatplacetowork.com/certified-company/1204874",
+      "https://www.linkedin.com/company/apexon"
+    ],
+    "researchSucceeded": true
+  },
+  "sourceFile": "Staff _ Principal Software Engineer – Java _ AI Platform - Apexon _ BeBee.pdf",
+  "slug": "staff-principal-software-engineer-java-ai-platform-apexon-bebee",
+  "extractedAt": "2026-08-13T17:42:22.249Z"
+}
